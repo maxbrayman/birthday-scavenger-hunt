@@ -1,0 +1,26 @@
+.ray {
+  clip-path: polygon(0% 45%, 100% 0%, 100% 100%, 0% 55%);
+  position: absolute;
+  width: 900px;
+  height: 600px;
+  max-height: 100vw;
+  background: linear-gradient(
+    0.25turn,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 100, 0)
+  );
+}
+
+.ray.shineDown {
+  transform: translateY(-50%) translateX(-50%) rotate(90deg) translateY(50%)
+    translateX(50%) translateY(-50%);
+  left: 50%;
+  top: -60px;
+}
+
+.ray.shineUp {
+  transform: translateY(50%) translateX(-50%) rotate(-90deg) translateY(-50%)
+    translateX(50%) translateY(50%) rotateY(10deg);
+  left: 50%;
+  bottom: 0;
+}

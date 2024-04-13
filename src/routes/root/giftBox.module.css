@@ -1,0 +1,123 @@
+:root {
+  --gift-box-size: 180px;
+  --gift-box-lid-width: 200px;
+  --gift-box-lid-height: 40px;
+}
+
+.container {
+  perspective: 400px;
+  width: var(--gift-box-size);
+  height: var(--gift-box-size);
+  display: block;
+}
+
+.giftBox {
+  width: var(--gift-box-size);
+  height: var(--gift-box-size);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 2s;
+}
+
+.giftBoxLid {
+  width: var(--gift-box-lid-width);
+  height: var(--gift-box-lid-height);
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateY(40px);
+}
+
+.giftBoxLidOpen {
+  animation: open 1s ease-out forwards;
+}
+
+.giftBoxSide {
+  width: var(--gift-box-size);
+  height: var(--gift-box-size);
+  background: linear-gradient(to right, red 40%, white 40%, white 60%, red 60%);
+  position: absolute;
+  border: 1px solid darkred;
+}
+
+.giftBoxLidSide {
+  width: var(--gift-box-lid-width);
+  height: var(--gift-box-lid-height);
+  background: linear-gradient(to right, red 40%, white 40%, white 60%, red 60%);
+  position: absolute;
+  border: 1px solid darkred;
+}
+
+.giftBoxLidSideTop,
+.giftBoxSideBottom {
+  background: linear-gradient(
+      to right,
+      transparent 40%,
+      white 40%,
+      white 60%,
+      transparent 60%
+    ),
+    linear-gradient(to bottom, red 40%, white 40%, white 60%, red 60%);
+}
+
+.giftBoxSideFront {
+  transform: rotateY(0deg) translateZ(90px);
+}
+
+.giftBoxSideBack {
+  transform: rotateY(180deg) translateZ(90px);
+}
+
+.giftBoxSideLeft {
+  transform: rotateY(-90deg) translateZ(90px);
+}
+
+.giftBoxSideRight {
+  transform: rotateY(90deg) translateZ(90px);
+}
+
+.giftBoxSideBottom {
+  transform: rotateX(-90deg) translateZ(90px);
+}
+
+.giftBoxLidSideFront {
+  transform: rotateY(0deg) translateZ(100px) translateX(-10px) translateY(-30px);
+}
+.giftBoxLidSideBack {
+  transform: rotateY(180deg) translateZ(100px) translateX(10px)
+    translateY(-30px);
+}
+.giftBoxLidSideLeft {
+  transform: rotateY(-90deg) translateZ(110px) translateY(-30px);
+}
+.giftBoxLidSideRight {
+  transform: rotateY(90deg) translateZ(90px) translateY(-30px);
+}
+.giftBoxLidSideTop {
+  transform: rotateX(90deg) translateZ(130px) translateX(-10px) translateY(0);
+  height: var(--gift-box-lid-width);
+}
+
+.rotatingAnimation {
+  animation: rotating 5s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: translateZ(-110px) rotateY(20deg) rotateX(-15deg) rotateZ(0deg);
+  }
+  to {
+    transform: translateZ(-110px) rotateY(380deg) rotateX(-15deg) rotateZ(0deg);
+  }
+}
+
+@keyframes open {
+  0% {
+    transform: translateY(40px) rotateX(0);
+    perspective: 650px;
+  }
+
+  100% {
+    transform: translateY(-90px) rotateX(80deg);
+    perspective: 600px;
+  }
+}
