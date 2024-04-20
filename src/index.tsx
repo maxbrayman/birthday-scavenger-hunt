@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
 import Pokemon from "./routes/pokemon";
 import HarryPotter from "./routes/harryPotter";
+import Panda from "./routes/panda";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/harry-potter",
     element: <HarryPotter />,
+  },
+  {
+    path: "/panda",
+    element: <Panda />,
   },
 ]);
 

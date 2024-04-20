@@ -1,0 +1,224 @@
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.fc {
+  background: transparent;
+  display: block;
+  margin: 4.5em auto 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 22em;
+  height: 17em;
+}
+.fc:focus {
+  outline: transparent;
+}
+.fcPart,
+.fcCrumbs,
+.fcCrumb,
+.fcFortune {
+  position: absolute;
+  top: 0;
+}
+.fcPart,
+.fcCrumb {
+  background: currentColor;
+  color: #efaa5d;
+}
+.fcPart {
+  width: 8em;
+  height: 18em;
+  z-index: 2;
+}
+.left {
+  border-radius: 7em 1em 1em 7em / 50%;
+  box-shadow: 0.5em 0 0 inset, 0.5em 0.2em 0 inset, 1em 0.2em 0 #fff6 inset,
+    -0.75em 0 0 #0002 inset;
+  clip-path: polygon(0% 0%, 68% 0%, 100% 30%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 68% 0%, 100% 30%, 100% 100%, 0% 100%);
+  left: calc(50% - 5.4em);
+  transform: rotate(25deg);
+  transform-origin: 68% 0;
+}
+.right {
+  border-radius: 1em 7em 7em 1em / 50%;
+  box-shadow: -0.5em 0 0 inset, -0.5em 0.2em 0 inset, -1em 0.2em 0 #fff6 inset,
+    0.75em 0 0 #0002 inset;
+  clip-path: polygon(0% 30%, 32% 0%, 100% 0, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 30%, 32% 0%, 100% 0, 100% 100%, 0% 100%);
+  right: calc(50% - 5.4em);
+  transform: rotate(-25deg);
+  transform-origin: 32% 0;
+}
+.fcCrumbs {
+  left: calc(50% - 0.4em);
+  width: 0.8em;
+  height: 6em;
+  z-index: 1;
+}
+.fcCrumb {
+  border-radius: 50%;
+  width: 0.5em;
+  height: 0.5em;
+}
+.fcCrumb:nth-child(1) {
+  top: 4%;
+  left: 15%;
+}
+.fcCrumb:nth-child(2) {
+  top: 20%;
+  right: 15%;
+}
+.fcCrumb:nth-child(3) {
+  top: 30%;
+  left: 25%;
+}
+.fcCrumb:nth-child(4) {
+  top: 45%;
+  right: 25%;
+}
+.fcCrumb:nth-child(5) {
+  top: 55%;
+  left: 5%;
+}
+.fcCrumb:nth-child(6) {
+  top: 65%;
+  right: 5%;
+}
+.fcCrumb:nth-child(7) {
+  top: 75%;
+  left: 30%;
+}
+.fcCrumb:nth-child(8) {
+  top: 90%;
+  right: 35%;
+}
+
+/* Animation States */
+.spawned {
+  animation: popIn 0.3s linear;
+}
+.opened {
+  width: 26em;
+  height: 6em;
+}
+.opened .left {
+  animation: breakLeft 0.7s ease-in forwards;
+}
+.opened .right {
+  animation: breakRight 0.7s ease-in forwards;
+}
+.opened .fcCrumbs {
+  animation: fallOut 0.7s ease-in forwards;
+}
+
+.clue {
+  margin: 4.5rem auto 0 auto;
+  width: 90%;
+  height: 80%;
+  transform-origin: top;
+  animation: scaleClue 0.6s ease-out forwards;
+  position: absolute;
+  left: 50%;
+  transform: scaleY(0) translateX(-50%);
+  border-radius: 8px;
+  background-color: whitesmoke;
+  color: black;
+  overflow-y: scroll;
+  padding: 12px;
+  text-align: center;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.instruction {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 400px;
+  width: 90%;
+  text-align: center;
+  font-size: 22px;
+  transition: opacity 0.6s;
+}
+
+/* Animations */
+@keyframes scaleClue {
+  from {
+    transform: scaleY(0) translateX(-50%);
+  }
+
+  to {
+    transform: scaleY(1) translateX(-50%);
+  }
+}
+@keyframes popIn {
+  from {
+    transform: scale(0) translateX(-50%);
+  }
+  75% {
+    transform: scale(1.1) translateX(-50%);
+  }
+  to {
+    transform: scale(1) translateX(-50%);
+  }
+}
+@keyframes breakLeft {
+  from {
+    transform: translateX(0) rotate(25deg);
+  }
+  30%,
+  40% {
+    transform: translateX(0) rotate(55deg);
+  }
+  70%,
+  80% {
+    opacity: 1;
+    transform: translateX(-14em) rotate(50deg);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-14em) rotate(50deg);
+  }
+}
+@keyframes breakRight {
+  from {
+    transform: translateX(0) rotate(-25deg);
+  }
+  30%,
+  40% {
+    transform: translateX(0) rotate(-55deg);
+  }
+  70%,
+  80% {
+    opacity: 1;
+    transform: translateX(14em) rotate(-50deg);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(14em) rotate(-50deg);
+  }
+}
+@keyframes fallOut {
+  from {
+    left: calc(50% - 0.4em);
+    width: 0.8em;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  60%,
+  to {
+    opacity: 0;
+    left: calc(50% - 3em);
+    width: 6em;
+    transform: translateY(24em);
+  }
+}

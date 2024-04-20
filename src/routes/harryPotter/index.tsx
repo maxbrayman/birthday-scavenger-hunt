@@ -5,6 +5,13 @@ import GoldenSnitchImg from "../../assets/golden-snitch.png";
 import DementorImg from "../../assets/dementor.png";
 import HarryPotterMusic from "../../assets/harry-potter-theme.mp3";
 import { useEffect, useRef, useState } from "react";
+import FlipCard from "../../components/FlipCard";
+import Button from "../../components/Button";
+
+const CLUE_P_1 =
+  "APPLE TURNOVER, something you’ll never turn down. There’s another surprise here, so turn around!";
+const CLUE_P_2 =
+  "Now we’re headed one of our favorite places in the entire world. You’ll find magic here, around every turn. You’ll see creatures from long ago, characters we love. You’ve conquered things here you used to be scared of! This is the last stop. So you only get one guess. Where can we fly without going to LAX?";
 
 class GoldenSnitch {
   x: number;
@@ -83,6 +90,7 @@ const HarryPotter = () => {
   const [isMouseActive, setIsMouseActive] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
   const [totalSnitches, setTotalSnitches] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
   const gameEnded = totalSnitches === 10;
 
   useEffect(() => {
@@ -330,28 +338,44 @@ const HarryPotter = () => {
     <div className={styles.container}>
       {gameStarted ? (
         <>
-          <canvas
-            ref={canvasRef}
-            onClick={(e) => {
-              if (!gameStarted) setGameStarted(true);
-            }}
-            onMouseDown={() => setIsMouseActive(true)}
-            onMouseUp={() => setIsMouseActive(false)}
-            onMouseMove={onMouseMove}
-            onTouchMove={onTouchMove}
-            width={CANVAS_WIDTH}
-            height={CANVAS_HEIGHT}
-            className={styles.canvas}
-          >
-            Fallback content...
-          </canvas>
+          <FlipCard
+            isFlipped={isFlipped}
+            Front={
+              <canvas
+                ref={canvasRef}
+                onMouseDown={() => setIsMouseActive(true)}
+                onMouseUp={() => setIsMouseActive(false)}
+                onMouseMove={onMouseMove}
+                onTouchMove={onTouchMove}
+                width={CANVAS_WIDTH}
+                height={CANVAS_HEIGHT}
+                className={styles.canvas}
+              >
+                Fallback content...
+              </canvas>
+            }
+            Back={
+              <>
+                {CLUE_P_1}
+                <br />
+                <br />
+                {CLUE_P_2}
+              </>
+            }
+            containerClassName={styles.card}
+          />
           <div className={styles.scoreContainer}>
             <div className={styles.scoreLabel}>
               <p>Snitches</p>
               <p>Collected</p>
             </div>
             {gameEnded && (
-              <button className={styles.nextButton}>Reveal Clue</button>
+              <Button
+                className={styles.nextButton}
+                onClick={() => setIsFlipped(true)}
+              >
+                Reveal Clue
+              </Button>
             )}
             <p className={styles.scoreCount}>{`${totalSnitches}/10`}</p>
           </div>
