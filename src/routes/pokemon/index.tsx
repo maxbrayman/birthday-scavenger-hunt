@@ -2,7 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import Backdrop from "../../assets/pokemon-backdrop.jpeg";
 import MewImage from "../../assets/mew.png";
 import Pokeball from "../../assets/pokeball.png";
+import PokemonMusic from "../../assets/pokemon-theme.mp3";
 import styles from "./index.module.css";
+import Button from "../../components/Button";
 
 const CANVAS_WIDTH = 370;
 const CANVAS_HEIGHT = 650;
@@ -125,6 +127,7 @@ const drawTextWithSpacing = (
 };
 
 const Pokemon = () => {
+  const audioRef = useRef<HTMLAudioElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const isCaught = useRef(false);
   const showText = useRef(false);
@@ -133,16 +136,20 @@ const Pokemon = () => {
   const isThrowingPokeballRef = useRef(false);
   const pokeballRef = useRef({ ...INITIAL_POKEBALL });
   const mewRef = useRef({ ...INITIAL_MEW });
+  const [gameStarted, setGameStarted] = useState(false);
   const [complete, setComplete] = useState(false);
 
   useEffect(() => {
-    updateCanvas();
+    if (gameStarted) {
+      updateCanvas();
+      audioRef.current?.play();
+    }
 
     return () => {
       if (animationFrameRef.current)
         cancelAnimationFrame(animationFrameRef.current);
     };
-  }, []);
+  }, [gameStarted]);
 
   useEffect(() => {
     if (complete && animationFrameRef.current)
@@ -307,29 +314,51 @@ const Pokemon = () => {
 
   return (
     <div className={styles.container}>
-      <canvas
-        ref={canvasRef}
-        width={CANVAS_WIDTH}
-        height={CANVAS_HEIGHT}
-        className={styles.canvas}
-        onClick={() => {
-          if (showText.current) {
-            console.log("next clue...");
-          }
-        }}
-      >
-        Fallback content...
-      </canvas>
-      <button
-        className={styles.mainButton}
-        style={{
-          backgroundColor: complete ? "#ff1f1f" : "#5db9ff",
-        }}
-        disabled={isThrowingPokeballRef.current}
-        onClick={onClickButton}
-      >
-        {complete ? "Reveal Clue" : "Throw"}
-      </button>
+      {gameStarted ? (
+        <>
+          <canvas
+            ref={canvasRef}
+            width={CANVAS_WIDTH}
+            height={CANVAS_HEIGHT}
+            className={styles.canvas}
+            onClick={() => {
+              if (showText.current) {
+                console.log("next clue...");
+              }
+            }}
+          >
+            Fallback content...
+          </canvas>
+          <Button
+            className={styles.mainButton}
+            style={{
+              backgroundColor: complete ? "#ff1f1f" : "#5db9ff",
+            }}
+            disabled={isThrowingPokeballRef.current}
+            onClick={onClickButton}
+          >
+            {complete ? "Reveal Clue" : "Throw"}
+          </Button>
+        </>
+      ) : (
+        <div className={styles.preGameContainer}>
+          <p className={styles.instructions}>
+            To reveal your next clue you'll have to catch the legendary Mew
+          </p>
+          <p style={{ marginTop: 12, fontSize: 18 }}>
+            {
+              "(Make sure you have your volumed turned up during the scavenger hunt, we got some bangers coming up)"
+            }
+          </p>
+          <Button
+            className={styles.startButton}
+            onClick={() => setGameStarted(true)}
+          >
+            Start
+          </Button>
+        </div>
+      )}
+      <audio ref={audioRef} src={PokemonMusic} playsInline loop></audio>
     </div>
   );
 };

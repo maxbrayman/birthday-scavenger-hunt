@@ -68,11 +68,13 @@ const RAY_INVISIBLE_STYLES: CSSProperties = {
 type GiftBoxProps = {
   onOpenAnimationEnd?: () => void;
   onGiftLoweredAnimationEnd?: () => void;
+  containerClassName?: string;
 };
 
 const GiftBox = ({
   onOpenAnimationEnd,
   onGiftLoweredAnimationEnd,
+  containerClassName,
 }: GiftBoxProps) => {
   const giftBoxRef = useRef<HTMLDivElement>(null);
   const [style, setStyle] = useState<CSSProperties>();
@@ -88,7 +90,7 @@ const GiftBox = ({
 
     setTimeout(() => {
       setStyle({
-        marginTop: "200px",
+        marginTop: "100px",
         transform:
           "rotateX(0deg) rotateY(0deg) translateZ(-60px) rotateZ(0) translateX(10px) translateY(20px)",
         animation: "none",
@@ -105,7 +107,12 @@ const GiftBox = ({
   const rayStyle = showRay ? RAY_VISIBLE_STYLES : RAY_INVISIBLE_STYLES;
 
   return (
-    <div className={styles.container} onClick={onClick}>
+    <div
+      className={`${styles.container}${
+        containerClassName ? ` ${containerClassName}` : ""
+      }`}
+      onClick={onClick}
+    >
       <div
         ref={giftBoxRef}
         onTransitionEnd={onTransitionEnd}

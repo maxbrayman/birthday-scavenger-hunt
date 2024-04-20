@@ -13,16 +13,30 @@
 }
 
 .mainButton {
-  outline: none;
   margin-top: 10px;
-  width: 90%;
-  height: 60px;
+  max-width: 90%;
   font-size: 28px;
-  border: none;
-  border-radius: 8px;
+}
+
+.preGameContainer {
+  padding: 16px;
+  padding-top: 0;
+  font-family: pokemon;
+  font-size: 28px;
+  text-align: center;
+}
+
+.startButton {
+  margin-top: 16px;
+  font-size: 36px;
+}
+
+.startButton,
+.mainButton {
   font-family: pokemon;
   text-shadow: -2px -2px 0 rgb(0, 117, 190), 1px -1px 0 rgb(0, 117, 190),
     -1px 1px 0 rgb(0, 117, 190), 1px 1px 0 rgb(0, 117, 190);
   color: rgb(255, 204, 0);
   letter-spacing: 2px;
+  background-color: #5db9ff;
 }

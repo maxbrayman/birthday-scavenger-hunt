@@ -9,15 +9,34 @@
 
 .happyBirthdayText {
   font-family: cursive;
-  font-size: 2.5em;
+  font-size: 1.8em;
   margin-top: 100px;
 }
 
 .textContainer {
-  margin-bottom: 90px;
+  margin-bottom: 50px;
   gap: 50px;
   transition: 2s;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.button {
+  margin-top: 16px;
+  font-size: 18px;
+  font-family: cursive;
+  background-image: linear-gradient(
+    to bottom right,
+    #ff460f,
+    #44a7f2,
+    #ffccd7,
+    #f5bd3d
+  );
+  max-width: 70%;
+  z-index: 100;
+}
+
+.giftBoxContainer {
+  margin-left: -18px;
 }
