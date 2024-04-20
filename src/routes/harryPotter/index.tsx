@@ -13,6 +13,9 @@ const CLUE_P_1 =
 const CLUE_P_2 =
   "Now we’re headed one of our favorite places in the entire world. You’ll find magic here, around every turn. You’ll see creatures from long ago, characters we love. You’ve conquered things here you used to be scared of! This is the last stop. So you only get one guess. Where can we fly without going to LAX?";
 
+const SNITCH_SPEED = 2;
+const DEMENTOR_SPEED = 3;
+
 class GoldenSnitch {
   x: number;
   y: number;
@@ -20,7 +23,7 @@ class GoldenSnitch {
   dy: number;
   w = 50;
   h = 30;
-  constructor(x: number, y: number, dx = 2, dy = 2) {
+  constructor(x: number, y: number, dx = SNITCH_SPEED, dy = SNITCH_SPEED) {
     this.x = x;
     this.y = y;
     this.dx = dx;
@@ -35,7 +38,7 @@ class Dementor {
   dy: number;
   w = 60;
   h = 75;
-  constructor(x: number, y: number, dx = 2.5, dy = 2.5) {
+  constructor(x: number, y: number, dx = DEMENTOR_SPEED, dy = DEMENTOR_SPEED) {
     this.x = x;
     this.y = y;
     this.dx = dx;
@@ -94,10 +97,11 @@ const HarryPotter = () => {
   const gameEnded = totalSnitches === 10;
 
   useEffect(() => {
-    document.body.addEventListener("touchmove", (e) => e.preventDefault(), {
-      passive: false,
-    });
+    const handler = (e: TouchEvent) => e.preventDefault();
     if (gameStarted) {
+      document.body.addEventListener("touchmove", handler, {
+        passive: false,
+      });
       updateCanvas();
       audioRef.current?.play();
     }
@@ -197,8 +201,8 @@ const HarryPotter = () => {
       CANVAS_HEIGHT - height - 5
     );
 
-    const newDx = 2 * (prevDx < 0 ? -1 : 1) * -1;
-    const newDy = 2 * (prevDy < 0 ? -1 : 1) * -1;
+    const newDx = DEMENTOR_SPEED * (prevDx < 0 ? -1 : 1) * -1;
+    const newDy = DEMENTOR_SPEED * (prevDy < 0 ? -1 : 1) * -1;
 
     dementorRef.current = new Dementor(
       newDementorX,
@@ -228,8 +232,8 @@ const HarryPotter = () => {
         CANVAS_HEIGHT - height - 5
       );
 
-      const newDx = 2 * (prevDx < 0 ? -1 : 1) * -1;
-      const newDy = 2 * (prevDy < 0 ? -1 : 1) * -1;
+      const newDx = SNITCH_SPEED * (prevDx < 0 ? -1 : 1) * -1;
+      const newDy = SNITCH_SPEED * (prevDy < 0 ? -1 : 1) * -1;
 
       snitchRef.current = new GoldenSnitch(
         newSnitchX,

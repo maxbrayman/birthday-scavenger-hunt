@@ -15,19 +15,19 @@ const router = createBrowserRouter([
     element: <Root />,
   },
   {
-    path: "/pokemon",
+    path: "/7053666",
     element: <Pokemon />,
   },
   {
-    path: "/harry-potter",
+    path: "/42779",
     element: <HarryPotter />,
   },
   {
-    path: "/panda",
+    path: "/72632",
     element: <Panda />,
   },
   {
-    path: "/avengers",
+    path: "/6358",
     element: <Avengers />,
   },
 ]);
