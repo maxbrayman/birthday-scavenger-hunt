@@ -1,7 +1,7 @@
 {
   "name": "birthday-scavenger-hunt",
   "version": "0.1.0",
-  "homepage": "https://maxbrayman.github.io",
+  "homepage": "https://maxbrayman.github.io/birthday-scavenger-hunt",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
