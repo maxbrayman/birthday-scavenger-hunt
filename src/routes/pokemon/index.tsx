@@ -5,6 +5,12 @@ import Pokeball from "../../assets/pokeball.png";
 import PokemonMusic from "../../assets/pokemon-theme.mp3";
 import styles from "./index.module.css";
 import Button from "../../components/Button";
+import FlipCard from "../../components/FlipCard";
+
+const CLUE_P_1 =
+  "Hello Jason, it’s time for a trick! happy birthday, you’re 26! I bet your wondering what this is all about. Well, these clues will help you figure it out! Keep your eyes peeled for these special codes. You’ll get a hint, and then you’ll know!";
+const CLUE_P_2 =
+  "Your hint: yum yum yum, you love to eat! You go to this place when you want to cheat. I’ll give one more hint, it’s only fair. At the door you’ll be greeted by a black & white bear.";
 
 const CANVAS_WIDTH = 370;
 const CANVAS_HEIGHT = 650;
@@ -138,6 +144,7 @@ const Pokemon = () => {
   const mewRef = useRef({ ...INITIAL_MEW });
   const [gameStarted, setGameStarted] = useState(false);
   const [complete, setComplete] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     if (gameStarted) {
@@ -309,26 +316,41 @@ const Pokemon = () => {
   };
 
   const onClickButton = () => {
-    isThrowingPokeballRef.current = true;
+    if (complete) setIsFlipped(true);
+    else isThrowingPokeballRef.current = true;
   };
 
   return (
     <div className={styles.container}>
       {gameStarted ? (
         <>
-          <canvas
-            ref={canvasRef}
-            width={CANVAS_WIDTH}
-            height={CANVAS_HEIGHT}
-            className={styles.canvas}
-            onClick={() => {
-              if (showText.current) {
-                console.log("next clue...");
-              }
-            }}
-          >
-            Fallback content...
-          </canvas>
+          <FlipCard
+            isFlipped={isFlipped}
+            containerClassName={styles.card}
+            Front={
+              <canvas
+                ref={canvasRef}
+                width={CANVAS_WIDTH}
+                height={CANVAS_HEIGHT}
+                className={`${styles.canvas} ${styles.cardFront}`}
+                onClick={() => {
+                  if (showText.current) {
+                    console.log("next clue...");
+                  }
+                }}
+              >
+                Fallback content...
+              </canvas>
+            }
+            Back={
+              <>
+                {CLUE_P_1}
+                <br />
+                <br />
+                {CLUE_P_2}
+              </>
+            }
+          />
           <Button
             className={styles.mainButton}
             style={{

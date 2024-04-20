@@ -7,15 +7,14 @@
 }
 
 .canvas {
-  width: 90%;
-  height: 80%;
-  border-radius: 8px;
+  width: 100%;
+  height: 100%;
 }
 
 .mainButton {
   margin-top: 10px;
-  max-width: 90%;
   font-size: 28px;
+  max-width: 90%;
 }
 
 .preGameContainer {
@@ -39,4 +38,10 @@
   color: rgb(255, 204, 0);
   letter-spacing: 2px;
   background-color: #5db9ff;
+}
+
+.card {
+  width: 90%;
+  height: 80%;
+  border-radius: 8px;
 }
