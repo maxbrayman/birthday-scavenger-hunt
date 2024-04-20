@@ -7,6 +7,7 @@ import Root from "./routes/root";
 import Pokemon from "./routes/pokemon";
 import HarryPotter from "./routes/harryPotter";
 import Panda from "./routes/panda";
+import Avengers from "./routes/avengers";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/panda",
     element: <Panda />,
+  },
+  {
+    path: "/avengers",
+    element: <Avengers />,
   },
 ]);
 

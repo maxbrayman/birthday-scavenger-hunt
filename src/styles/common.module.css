@@ -1,0 +1,12 @@
+.clue {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  color: black;
+  padding: 12px;
+  height: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}

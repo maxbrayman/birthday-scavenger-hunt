@@ -17,18 +17,12 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: white;
-  color: #03446a;
-  text-align: center;
   backface-visibility: hidden;
 }
 
 .cardBack {
-  background: #03446a;
-  color: white;
   transform: rotateY(180deg);
   padding: 12px;
-  font-size: 22px;
   overflow-y: scroll;
 }
 

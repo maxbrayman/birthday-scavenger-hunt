@@ -49,3 +49,18 @@ code {
   font-family: harry-potter;
   src: url("./fonts/Harry-Potter.ttf");
 }
+
+@font-face {
+  font-family: spider-man;
+  src: url("./fonts/spider-man.ttf");
+}
+
+@font-face {
+  font-family: kung-fu-panda;
+  src: url("./fonts/kung-fu-panda.ttf");
+}
+
+@font-face {
+  font-family: avengers;
+  src: url("./fonts/avengers.ttf");
+}
