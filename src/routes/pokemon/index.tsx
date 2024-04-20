@@ -323,7 +323,7 @@ const Pokemon = () => {
       <button
         className={styles.mainButton}
         style={{
-          backgroundColor: complete ? "red" : "dodgerblue",
+          backgroundColor: complete ? "#ff1f1f" : "#5db9ff",
         }}
         disabled={isThrowingPokeballRef.current}
         onClick={onClickButton}
