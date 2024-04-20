@@ -62,3 +62,14 @@
   height: 70%;
   border-radius: 8px;
 }
+
+.clue {
+  background-color: whitesmoke;
+  font-family: harry-potter;
+  border-radius: 8px;
+  color: black;
+  padding: 12px;
+  font-size: 28px;
+  height: 100%;
+  overflow-y: scroll;
+}

@@ -32,10 +32,6 @@
 
 .startButton,
 .mainButton {
-  font-family: pokemon;
-  text-shadow: -2px -2px 0 rgb(0, 117, 190), 1px -1px 0 rgb(0, 117, 190),
-    -1px 1px 0 rgb(0, 117, 190), 1px 1px 0 rgb(0, 117, 190);
-  color: rgb(255, 204, 0);
   letter-spacing: 2px;
   background-color: #5db9ff;
 }
@@ -44,4 +40,17 @@
   width: 90%;
   height: 80%;
   border-radius: 8px;
+}
+
+.startButton,
+.mainButton,
+.clueText {
+  font-family: pokemon;
+  text-shadow: -2px -2px 0 rgb(0, 117, 190), 1px -1px 0 rgb(0, 117, 190),
+    -1px 1px 0 rgb(0, 117, 190), 1px 1px 0 rgb(0, 117, 190);
+  color: rgb(255, 204, 0);
+}
+
+.clueText {
+  font-size: 1.2rem;
 }

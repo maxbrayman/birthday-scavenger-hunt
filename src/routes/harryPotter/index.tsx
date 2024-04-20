@@ -355,12 +355,12 @@ const HarryPotter = () => {
               </canvas>
             }
             Back={
-              <>
+              <div className={styles.clue}>
                 {CLUE_P_1}
                 <br />
                 <br />
                 {CLUE_P_2}
-              </>
+              </div>
             }
             containerClassName={styles.card}
           />

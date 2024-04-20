@@ -125,16 +125,13 @@ button {
   left: 50%;
   transform: scaleY(0) translateX(-50%);
   border-radius: 8px;
-  background-color: whitesmoke;
+}
+
+.clueText {
+  font-family: kung-fu-panda;
   color: black;
-  overflow-y: scroll;
-  padding: 12px;
   text-align: center;
-  font-size: 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  font-size: 1.1rem;
 }
 
 .instruction {

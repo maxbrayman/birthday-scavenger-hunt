@@ -4,8 +4,10 @@ import MewImage from "../../assets/mew.png";
 import Pokeball from "../../assets/pokeball.png";
 import PokemonMusic from "../../assets/pokemon-theme.mp3";
 import styles from "./index.module.css";
+import commonStyles from "../../styles/common.module.css";
 import Button from "../../components/Button";
 import FlipCard from "../../components/FlipCard";
+import Typhlosion from "../../assets/typhlosion.png";
 
 const CLUE_P_1 =
   "Hello Jason, it’s time for a trick! happy birthday, you’re 26! I bet your wondering what this is all about. Well, these clues will help you figure it out! Keep your eyes peeled for these special codes. You’ll get a hint, and then you’ll know!";
@@ -343,12 +345,20 @@ const Pokemon = () => {
               </canvas>
             }
             Back={
-              <>
-                {CLUE_P_1}
-                <br />
-                <br />
-                {CLUE_P_2}
-              </>
+              <div className={commonStyles.clue}>
+                <img
+                  alt="typhlosion"
+                  src={Typhlosion}
+                  width={120}
+                  height={150}
+                />
+                <p className={styles.clueText}>
+                  {CLUE_P_1}
+                  <br />
+                  <br />
+                  {CLUE_P_2}
+                </p>
+              </div>
             }
           />
           <Button
