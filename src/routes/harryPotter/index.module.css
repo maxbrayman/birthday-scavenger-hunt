@@ -1,0 +1,63 @@
+.container {
+  align-items: center;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.canvas {
+  width: 90%;
+  height: 70%;
+  border-radius: 8px;
+}
+
+.scoreContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  width: 90%;
+  margin-top: 10px;
+  font-family: harry-potter;
+  font-size: 22px;
+}
+
+.nextButton {
+  outline: none;
+  flex: 1;
+  padding: 10px 0;
+  font-size: 36px;
+  border: none;
+  border-radius: 8px;
+  font-family: harry-potter;
+  text-shadow: -2px -2px 0 #3d2f22, 1px -1px 0 #3d2f22, -1px 1px 0 #3d2f22,
+    1px 1px 0 #3d2f22;
+  color: #c39a1c;
+  letter-spacing: 2px;
+  background-color: #641e1e;
+}
+
+.preGameContainer {
+  padding: 16px;
+  padding-top: 0;
+  font-family: harry-potter;
+  font-size: 28px;
+  text-align: center;
+}
+
+.startButton {
+  outline: none;
+  width: 100%;
+  margin-top: 16px;
+  padding: 10px 0;
+  font-size: 36px;
+  border: none;
+  border-radius: 8px;
+  font-family: harry-potter;
+  text-shadow: -2px -2px 0 #3d2f22, 1px -1px 0 #3d2f22, -1px 1px 0 #3d2f22,
+    1px 1px 0 #3d2f22;
+  color: #c39a1c;
+  letter-spacing: 2px;
+  background-color: #641e1e;
+}

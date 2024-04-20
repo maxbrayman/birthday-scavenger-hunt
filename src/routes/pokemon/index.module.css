@@ -20,4 +20,9 @@
   font-size: 28px;
   border: none;
   border-radius: 8px;
+  font-family: pokemon;
+  text-shadow: -2px -2px 0 rgb(0, 117, 190), 1px -1px 0 rgb(0, 117, 190),
+    -1px 1px 0 rgb(0, 117, 190), 1px 1px 0 rgb(0, 117, 190);
+  color: rgb(255, 204, 0);
+  letter-spacing: 2px;
 }
