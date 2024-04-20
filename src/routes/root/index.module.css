@@ -1,8 +1,10 @@
 .container {
-  /* justify-content: center; */
-  align-items: center;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .happyBirthdayText {
@@ -12,7 +14,7 @@
 }
 
 .textContainer {
-  margin-bottom: 200px;
+  margin-bottom: 90px;
   gap: 50px;
   transition: 2s;
   display: flex;

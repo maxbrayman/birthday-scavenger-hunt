@@ -1,7 +1,7 @@
 .ray {
   clip-path: polygon(0% 45%, 100% 0%, 100% 100%, 0% 55%);
   position: absolute;
-  width: 900px;
+  width: 100vh;
   height: 600px;
   max-height: 100vw;
   background: linear-gradient(

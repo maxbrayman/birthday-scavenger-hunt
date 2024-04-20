@@ -39,3 +39,8 @@ code {
   font-family: cursive;
   src: url("./fonts/StyleScript-Regular.ttf") format("ttf");
 }
+
+@font-face {
+  font-family: pokemon;
+  src: url("./fonts//Pokemon-Solid.ttf");
+}

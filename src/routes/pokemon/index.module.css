@@ -1,0 +1,23 @@
+.container {
+  align-items: center;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.canvas {
+  width: 90%;
+  height: 80%;
+  border-radius: 8px;
+}
+
+.mainButton {
+  outline: none;
+  margin-top: 10px;
+  width: 90%;
+  height: 60px;
+  font-size: 28px;
+  border: none;
+  border-radius: 8px;
+}
