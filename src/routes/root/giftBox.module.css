@@ -116,7 +116,7 @@
   }
 
   100% {
-    transform: translateY(-90px) rotateX(85deg);
+    transform: translateY(-70px) rotateX(85deg);
     perspective: 600px;
   }
 }

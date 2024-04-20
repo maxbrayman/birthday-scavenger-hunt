@@ -2,12 +2,15 @@ import Confetti from "react-confetti";
 import useWindowSize from "../../hooks/useWindowSize";
 import styles from "./index.module.css";
 import GiftBox from "./GiftBox";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Ray from "./Ray";
+import HappyBirthday from "../../assets/happy-birthday-song.mp3";
 import { useNavigate } from "react-router-dom";
+import Button from "../../components/Button";
 
 const Root = () => {
   const navigate = useNavigate();
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [showConfetti, setShowConfetti] = useState(false);
   const [showRay, setShowRay] = useState(true);
   const [showText, setShowText] = useState(false);
@@ -20,6 +23,7 @@ const Root = () => {
 
   const onGiftLoweredAnimationEnd = () => {
     setShowRay(false);
+    audioRef.current?.play();
   };
 
   return (
@@ -40,19 +44,21 @@ const Root = () => {
         style={{ opacity: showText ? 1 : 0 }}
       >
         <h3 className={styles.happyBirthdayText}>Happy Birthday!</h3>
-        <p
-          style={{ zIndex: 100 }}
+        <Button
+          className={styles.button}
           onClick={() => {
             navigate("/pokemon");
           }}
         >
-          Next
-        </p>
+          Start
+        </Button>
       </div>
       <GiftBox
         onOpenAnimationEnd={onOpenAnimationEnd}
         onGiftLoweredAnimationEnd={onGiftLoweredAnimationEnd}
+        containerClassName={styles.giftBoxContainer}
       />
+      <audio ref={audioRef} loop playsInline src={HappyBirthday} />
     </div>
   );
 };
