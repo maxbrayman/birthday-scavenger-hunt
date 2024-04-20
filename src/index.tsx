@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
 import Pokemon from "./routes/pokemon";
+import HarryPotter from "./routes/harryPotter";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/pokemon",
     element: <Pokemon />,
+  },
+  {
+    path: "/harry-potter",
+    element: <HarryPotter />,
   },
 ]);
 
