@@ -23,7 +23,16 @@ const Root = () => {
   };
 
   return (
-    <div className={`page ${styles.container}`}>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <Ray style={{ opacity: showRay ? 1 : 0, transition: "2s" }} />
       <Confetti width={width} height={height} run={showConfetti} />
       <div
@@ -34,7 +43,6 @@ const Root = () => {
         <p
           style={{ zIndex: 100 }}
           onClick={() => {
-            console.log("clicked...");
             navigate("/pokemon");
           }}
         >

@@ -1,7 +1,7 @@
 :root {
-  --gift-box-size: 180px;
-  --gift-box-lid-width: 200px;
-  --gift-box-lid-height: 40px;
+  --gift-box-size: 160px;
+  --gift-box-lid-width: 180px;
+  --gift-box-lid-height: 30px;
 }
 
 .container {
@@ -60,40 +60,39 @@
 }
 
 .giftBoxSideFront {
-  transform: rotateY(0deg) translateZ(90px);
+  transform: rotateY(0deg) translateZ(80px);
 }
 
 .giftBoxSideBack {
-  transform: rotateY(180deg) translateZ(90px);
+  transform: rotateY(180deg) translateZ(80px);
 }
 
 .giftBoxSideLeft {
-  transform: rotateY(-90deg) translateZ(90px);
+  transform: rotateY(-90deg) translateZ(80px);
 }
 
 .giftBoxSideRight {
-  transform: rotateY(90deg) translateZ(90px);
+  transform: rotateY(90deg) translateZ(80px);
 }
 
 .giftBoxSideBottom {
-  transform: rotateX(-90deg) translateZ(90px);
+  transform: rotateX(-90deg) translateZ(80px);
 }
 
 .giftBoxLidSideFront {
-  transform: rotateY(0deg) translateZ(100px) translateX(-10px) translateY(-30px);
+  transform: rotateY(0deg) translateZ(90px) translateX(-10px) translateY(-30px);
 }
 .giftBoxLidSideBack {
-  transform: rotateY(180deg) translateZ(100px) translateX(10px)
-    translateY(-30px);
+  transform: rotateY(180deg) translateZ(90px) translateX(10px) translateY(-30px);
 }
 .giftBoxLidSideLeft {
-  transform: rotateY(-90deg) translateZ(110px) translateY(-30px);
+  transform: rotateY(-90deg) translateZ(100px) translateY(-30px);
 }
 .giftBoxLidSideRight {
-  transform: rotateY(90deg) translateZ(90px) translateY(-30px);
+  transform: rotateY(90deg) translateZ(80px) translateY(-30px);
 }
 .giftBoxLidSideTop {
-  transform: rotateX(90deg) translateZ(130px) translateX(-10px) translateY(0);
+  transform: rotateX(90deg) translateZ(120px) translateX(-10px) translateY(0);
   height: var(--gift-box-lid-width);
 }
 
@@ -117,7 +116,7 @@
   }
 
   100% {
-    transform: translateY(-90px) rotateX(80deg);
+    transform: translateY(-90px) rotateX(85deg);
     perspective: 600px;
   }
 }
