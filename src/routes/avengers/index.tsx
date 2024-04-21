@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import SpiderManMusic from "../../assets/spider-man-theme.mp3";
 
 const CLUE =
-  "YES! the melt, you birthday genius you. you’ve made it all the way to clue 2! go ahead and slurp up your yummy oreos, and i’ll give you a hint of the next place to go. this place has food, but not for you. think of your boys and you’ll know just what to do. ";
+  "YES! the melt, you birthday genius you. you’ve made it all the way to clue 3! go ahead and slurp up your yummy oreos, and i’ll give you a hint of the next place to go. this place has food, but not for you. think of your boys and you’ll know just what to do. ";
 
 const Avengers = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -41,6 +41,9 @@ const Avengers = () => {
           right: 0,
         }}
       />
+      <p style={{ position: "absolute", left: 20, top: 70 }}>
+        Grab the Infinity Stones!
+      </p>
       <img
         alt="groot"
         src={Groot}
