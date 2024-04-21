@@ -64,3 +64,8 @@ code {
   font-family: avengers;
   src: url("./fonts/avengers.ttf");
 }
+
+@font-face {
+  font-family: hey-tiny;
+  src: url("./fonts/hey-tiny.ttf");
+}

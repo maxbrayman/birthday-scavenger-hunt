@@ -8,6 +8,7 @@ import Pokemon from "./routes/pokemon";
 import HarryPotter from "./routes/harryPotter";
 import Panda from "./routes/panda";
 import Avengers from "./routes/avengers";
+import Dogs from "./routes/dogs";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/6358",
     element: <Avengers />,
+  },
+  {
+    path: "/5333",
+    element: <Dogs />,
   },
 ]);
 

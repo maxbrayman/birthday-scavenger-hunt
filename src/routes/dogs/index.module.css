@@ -1,0 +1,120 @@
+.charlie {
+  animation: wiggle-charlie 3s ease-in-out alternate infinite;
+  align-self: flex-end;
+  margin-top: -12px;
+  margin-right: -12px;
+}
+
+.schmidt {
+  animation: wiggle-schmidt 3s ease-in-out alternate infinite;
+  align-self: flex-start;
+  margin-left: -12px;
+  margin-bottom: -12px;
+}
+
+.clueText {
+  width: 100%;
+}
+
+.imagesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bottomContainer {
+  align-items: flex-end;
+}
+
+.paw {
+  /* transform: rotate(-20deg); */
+  animation: wiggle-paw 3s ease-in-out alternate infinite;
+}
+
+.clueText {
+  color: black;
+  font-family: hey-tiny;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+  line-height: 1.7rem;
+}
+
+.mainPaw {
+  filter: invert(100%) sepia(2%) saturate(9%) hue-rotate(82deg) brightness(104%)
+    contrast(100%);
+}
+
+.introContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  gap: 28px;
+}
+
+.introContainer p {
+  font-family: hey-tiny;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.clue {
+  transform: scale(0);
+  animation: scale-up 0.6s ease-out forwards;
+}
+
+.hideIntro {
+  animation: scale-down 0.6s ease-in forwards;
+}
+
+@keyframes wiggle-charlie {
+  from {
+    transform: rotate(-20deg);
+  }
+
+  to {
+    transform: rotate((20deg));
+  }
+}
+
+@keyframes wiggle-schmidt {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(25deg);
+  }
+}
+
+@keyframes wiggle-paw {
+  from {
+    transform: rotate(20deg);
+  }
+
+  to {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-down {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}
