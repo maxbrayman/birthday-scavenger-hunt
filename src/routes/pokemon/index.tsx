@@ -10,7 +10,7 @@ import FlipCard from "../../components/FlipCard";
 import Typhlosion from "../../assets/typhlosion.png";
 
 const CLUE_P_1 =
-  "Hello Jason, it’s time for a trick! happy birthday, you’re 26! I bet your wondering what this is all about. Well, these clues will help you figure it out! Keep your eyes peeled for these special codes. You’ll get a hint, and then you’ll know!";
+  "Hello Jason, it’s time for a trick! happy birthday, you’re 26! I bet you're wondering what this is all about. Well, these clues will help you figure it out! Keep your eyes peeled for these special codes. You’ll get a hint, and then you’ll know!";
 const CLUE_P_2 =
   "Your hint: yum yum yum, you love to eat! You go to this place when you want to cheat. I’ll give one more hint, it’s only fair. At the door you’ll be greeted by a black & white bear.";
 

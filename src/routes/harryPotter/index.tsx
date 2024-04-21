@@ -11,7 +11,7 @@ import Button from "../../components/Button";
 const CLUE_P_1 =
   "APPLE TURNOVER, something you’ll never turn down. There’s another surprise here, so turn around!";
 const CLUE_P_2 =
-  "Now we’re headed one of our favorite places in the entire world. You’ll find magic here, around every turn. You’ll see creatures from long ago, characters we love. You’ve conquered things here you used to be scared of! This is the last stop. So you only get one guess. Where can we fly without going to LAX?";
+  "Now we’re headed to one of our favorite places in the entire world. You’ll find magic here, around every turn. You’ll see creatures from long ago, characters we love. You’ve conquered things here you used to be scared of! This is the last stop. So you only get one guess. Where can we fly without going to LAX?";
 
 const SNITCH_SPEED = 2;
 const DEMENTOR_SPEED = 3;
