@@ -47,7 +47,7 @@ const Root = () => {
         <Button
           className={styles.button}
           onClick={() => {
-            navigate("/pokemon");
+            navigate("/7053666");
           }}
         >
           Start
